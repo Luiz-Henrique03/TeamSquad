@@ -1,7 +1,7 @@
 import sqlite3
 
 class DatabaseManager:
-    def inserir_jogador(jogador, posicao):
+    def insert_player(jogador, posicao):
         if jogador == " " or posicao == " ":
                 print("Jogador inválido.")
                 return

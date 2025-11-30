@@ -3,11 +3,11 @@ import databaseManager
 
 Datamanager = databaseManager.DatabaseManager
 
-nome = input("Digite o nome do jogador: ")
-posicao = input("Digite a posição do jogador: ")
-nota = float(input("Digite a nota do jogador: "))
-jogador = players.Player(nome, posicao, nota)
-Datamanager.inserir_jogador(jogador, posicao)
+name = input("Digite o nome do jogador: ")
+position = input("Digite a posição do jogador: ")
+score = float(input("Digite a nota do jogador: "))
+player = players.Player(name, position, score)
+Datamanager.insert_player(player, position)
 
         
     
