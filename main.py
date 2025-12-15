@@ -55,6 +55,44 @@ def Zagueiros():
             
                 player = players.Player(name, position, score)
                 Datamanager.insert_player(player, position)
+                i+=1
+
+def Meio():
+    i = 1
+    while i < 6:
+            if i < 1:
+                i = 1
+            name = input("Nome do meia: ")
+            if name == "": 
+                print("Entrada inválida. Tente novamente.")
+                i = i - 1
+                print(i)
+            elif name != "":
+                position = "Meio-campista"
+                score = float(input("Digite a nota do jogador: "))
+            
+                player = players.Player(name, position, score)
+                Datamanager.insert_player(player, position)
+                i+=1
+
+
+def Atacante():
+    i = 1
+    while i < 7:
+            if i < 1:
+                i = 1
+            name = input("Nome do atacante: ")
+            if name == "": 
+                print("Entrada inválida. Tente novamente.")
+                i = i - 1
+                print(i)
+            elif name != "":
+                position = "Atacante"
+                score = float(input("Digite a nota do jogador: "))
+            
+                player = players.Player(name, position, score)
+                Datamanager.insert_player(player, position)
+                i+=1
 
 def set_lineup():
     i = 1
@@ -62,6 +100,8 @@ def set_lineup():
     Goleiros()
     Laterais()
     Zagueiros()
+    Meio()
+    Atacante()
     
         
       
