@@ -18,7 +18,7 @@ def Goleiros():
                 score = float(input("Digite a nota do jogador: "))
             
                 player = players.Player(name, position, score)
-                Datamanager.insert_player(player, position)
+                Datamanager.insert_player(player, position,score)
                 i+=1
 
 def Laterais():
@@ -36,7 +36,7 @@ def Laterais():
                 score = float(input("Digite a nota do jogador: "))
             
                 player = players.Player(name, position, score)
-                Datamanager.insert_player(player, position)
+                Datamanager.insert_player(player, position,score)
                 i+=1
 
 def Zagueiros():
@@ -54,7 +54,7 @@ def Zagueiros():
                 score = float(input("Digite a nota do jogador: "))
             
                 player = players.Player(name, position, score)
-                Datamanager.insert_player(player, position)
+                Datamanager.insert_player(player, position,score)
                 i+=1
 
 def Meio():
@@ -72,7 +72,7 @@ def Meio():
                 score = float(input("Digite a nota do jogador: "))
             
                 player = players.Player(name, position, score)
-                Datamanager.insert_player(player, position)
+                Datamanager.insert_player(player, position,score)
                 i+=1
 
 
@@ -91,18 +91,24 @@ def Atacante():
                 score = float(input("Digite a nota do jogador: "))
             
                 player = players.Player(name, position, score)
-                Datamanager.insert_player(player, position)
+                Datamanager.insert_player(player, position,score)
                 i+=1
 
 def set_lineup():
     i = 1
+    maior = 0
+    melhor_da_posicao = ""
     print("Convoque sua seleção ")
-    Goleiros()
-    Laterais()
-    Zagueiros()
-    Meio()
-    Atacante()
     
+    goleiros = Datamanager.get_players_by_position("Goleiro")
+    print("Goleiros convocados:", goleiros)
+    for i in range(len(goleiros)):
+         maior = goleiros[0][2]
+         if goleiros[i][2] >= maior:
+            maior = goleiros[i][2]
+            melhor_da_posicao = goleiros[i]
+            
+    print("Melhor goleiro:", melhor_da_posicao[0])
         
       
 
