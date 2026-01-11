@@ -17,3 +17,22 @@ class DatabaseManager:
             cursor.execute(comando_sql, (posicao,))
             jogadores = cursor.fetchall()
             return jogadores
+    def remove_player(nome):
+        with sqlite3.connect("team.db") as conexao:
+            cursor = conexao.cursor()
+            comando_sql = "DELETE FROM lineup WHERE nome = ?"
+            cursor.execute(comando_sql, (nome,))
+            conexao.commit()
+    def clear_lineup():
+        with sqlite3.connect("team.db") as conexao:
+            cursor = conexao.cursor()
+            comando_sql = "DELETE FROM lineup"
+            cursor.execute(comando_sql)
+            conexao.commit()
+    def get_position(name):
+        with sqlite3.connect("team.db") as conexao:
+            cursor = conexao.cursor()
+            comando_sql = "SELECT posicao FROM lineup WHERE nome = ?"
+            cursor.execute(comando_sql, (name,))
+            posicao = cursor.fetchone()
+            return posicao

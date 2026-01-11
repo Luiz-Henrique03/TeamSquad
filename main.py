@@ -163,7 +163,6 @@ def set_lineup():
     print("Melhores Atacantes:", Atacantes_titulares)
     
 
-        
       
 
     
